@@ -16,6 +16,10 @@
 		CE45D53325C9094E005AADEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE45D53125C9094E005AADEC /* LaunchScreen.storyboard */; };
 		CE45D53E25C9094E005AADEC /* CollectionViewTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45D53D25C9094E005AADEC /* CollectionViewTestTests.swift */; };
 		CE45D54925C9094E005AADEC /* CollectionViewTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45D54825C9094E005AADEC /* CollectionViewTestUITests.swift */; };
+		CE45D56025C92C7D005AADEC /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE45D55F25C92C7D005AADEC /* Cell.xib */; };
+		CE45D56D25C92DD6005AADEC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45D56C25C92DD6005AADEC /* Cell.swift */; };
+		CE45D57325C94D11005AADEC /* MultiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE45D57225C94D11005AADEC /* MultiCell.xib */; };
+		CE45D57825C94D1A005AADEC /* MultiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45D57725C94D1A005AADEC /* MultiCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		CE45D54425C9094E005AADEC /* CollectionViewTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionViewTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE45D54825C9094E005AADEC /* CollectionViewTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTestUITests.swift; sourceTree = "<group>"; };
 		CE45D54A25C9094E005AADEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE45D55F25C92C7D005AADEC /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		CE45D56C25C92DD6005AADEC /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		CE45D57225C94D11005AADEC /* MultiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiCell.xib; sourceTree = "<group>"; };
+		CE45D57725C94D1A005AADEC /* MultiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,10 @@
 				CE45D52325C90949005AADEC /* AppDelegate.swift */,
 				CE45D52525C90949005AADEC /* SceneDelegate.swift */,
 				CE45D52725C90949005AADEC /* ViewController.swift */,
+				CE45D57225C94D11005AADEC /* MultiCell.xib */,
+				CE45D57725C94D1A005AADEC /* MultiCell.swift */,
+				CE45D56C25C92DD6005AADEC /* Cell.swift */,
+				CE45D55F25C92C7D005AADEC /* Cell.xib */,
 				CE45D52925C90949005AADEC /* Main.storyboard */,
 				CE45D52F25C9094D005AADEC /* Assets.xcassets */,
 				CE45D53125C9094E005AADEC /* LaunchScreen.storyboard */,
@@ -235,6 +247,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE45D53325C9094E005AADEC /* LaunchScreen.storyboard in Resources */,
+				CE45D57325C94D11005AADEC /* MultiCell.xib in Resources */,
+				CE45D56025C92C7D005AADEC /* Cell.xib in Resources */,
 				CE45D53025C9094D005AADEC /* Assets.xcassets in Resources */,
 				CE45D52B25C90949005AADEC /* Main.storyboard in Resources */,
 			);
@@ -263,6 +277,8 @@
 			files = (
 				CE45D52825C90949005AADEC /* ViewController.swift in Sources */,
 				CE45D52425C90949005AADEC /* AppDelegate.swift in Sources */,
+				CE45D56D25C92DD6005AADEC /* Cell.swift in Sources */,
+				CE45D57825C94D1A005AADEC /* MultiCell.swift in Sources */,
 				CE45D52E25C90949005AADEC /* CollectionViewTest.xcdatamodeld in Sources */,
 				CE45D52625C90949005AADEC /* SceneDelegate.swift in Sources */,
 			);
