@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     
     var listItems: [Int] = [1]
     let margin: CGFloat = 10
-    var cellItemCount: CGFloat = 1
+    var cellItemCount: CGFloat = 3
     
     var collectionView: UICollectionView!
     let flowLayout = UICollectionViewFlowLayout()
@@ -64,13 +64,12 @@ class ViewController: UIViewController {
         
         flowLayout.scrollDirection = .vertical
         
-        flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin) // CollectionView 의 전체 마진
-        flowLayout.minimumLineSpacing = margin // 셀 아이템간의 라인 마진
-        flowLayout.minimumInteritemSpacing = margin // 셀 아이템간의 측면 마진
         
         
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
+        
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         view.addSubview(collectionView)
+        
         
         collectionView.backgroundColor = .white
         collectionView.contentInsetAdjustmentBehavior = .always
@@ -82,7 +81,11 @@ class ViewController: UIViewController {
         collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         
-        setType(.tableView)
+        if cellItemCount == 3 {
+            setType(.collectionView)
+        } else {
+            setType(.tableView)
+        }
         
         // 셀 등록
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
@@ -92,10 +95,6 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-//        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        }
-        
     }
     
     
@@ -103,8 +102,16 @@ class ViewController: UIViewController {
         
         if cellItemCount == 3 {
             setType(.tableView)
+            
+            flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin) // CollectionView 의 전체 마진
+            flowLayout.minimumLineSpacing = margin // 셀 아이템간의 라인 마진
+            flowLayout.minimumInteritemSpacing = margin // 셀 아이템간의 측면 마진
         } else {
             setType(.collectionView)
+            
+            collectionView.contentInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+            (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInsetReference = .fromLayoutMargins
         }
     }
     
@@ -188,8 +195,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         //cell.setData(data: "row \(listItems[(indexPath as NSIndexPath).row])")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MultiCell", for: indexPath) as! MultiCell
             
-            cell.backgroundColor = .red
-            cell.layer.cornerRadius = 10
+//            cell.backgroundColor = .red
+//            cell.layer.cornerRadius = 10
             cell.label.text = "row \(samuelQuotes[(indexPath as NSIndexPath).row])"
             return cell
         }
