@@ -15,6 +15,8 @@ class CollectionViewUIVC: UIViewController {
     let margin: CGFloat = 20
     var cellItemCount: CGFloat = 3
     
+    //let flowLayout = UICollectionViewFlowLayout()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -85,6 +87,8 @@ class CollectionViewUIVC: UIViewController {
         flowLayout.itemSize.height = flowLayout.itemSize.width
         
         self.collectionView.collectionViewLayout = flowLayout
+        
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

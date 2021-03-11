@@ -7,11 +7,6 @@
 
 import UIKit
 
-enum MAIN_TYPE {
-    case collectionView
-    case tableView
-}
-
 class CollectionViewCodeVC: UIViewController {
     
     var collectionView: UICollectionView!
@@ -96,6 +91,8 @@ class CollectionViewCodeVC: UIViewController {
         } else {
             collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
         }
+        
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -137,4 +134,9 @@ extension CollectionViewCodeVC: UICollectionViewDelegate, UICollectionViewDataSo
         cell.label.text = "row \(listItems[(indexPath as NSIndexPath).row])"
         return cell
     }
+}
+
+enum MAIN_TYPE {
+    case collectionView
+    case tableView
 }
