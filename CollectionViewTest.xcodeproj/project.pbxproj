@@ -16,6 +16,13 @@
 		CE45D53325C9094E005AADEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE45D53125C9094E005AADEC /* LaunchScreen.storyboard */; };
 		CE45D53E25C9094E005AADEC /* CollectionViewTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45D53D25C9094E005AADEC /* CollectionViewTestTests.swift */; };
 		CE45D54925C9094E005AADEC /* CollectionViewTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45D54825C9094E005AADEC /* CollectionViewTestUITests.swift */; };
+		CE95738625F986A800FFE6A5 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95738525F986A800FFE6A5 /* Cell.xib */; };
+		CE95738B25F986C200FFE6A5 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95738A25F986C200FFE6A5 /* Cell.swift */; };
+		CE95739025F98A3200FFE6A5 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95738F25F98A3200FFE6A5 /* MainVC.swift */; };
+		CE95739525F99F1E00FFE6A5 /* CollectionViewCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95739425F99F1E00FFE6A5 /* CollectionViewCodeVC.swift */; };
+		CE95739A25F99F2B00FFE6A5 /* CollectionViewUIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95739925F99F2B00FFE6A5 /* CollectionViewUIVC.swift */; };
+		CE9573B625FA19FA00FFE6A5 /* CollectionViewDynamicCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9573B525FA19FA00FFE6A5 /* CollectionViewDynamicCellVC.swift */; };
+		CE9573BB25FA1A4D00FFE6A5 /* CollectionViewDynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9573BA25FA1A4D00FFE6A5 /* CollectionViewDynamicCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		CE45D54425C9094E005AADEC /* CollectionViewTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionViewTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE45D54825C9094E005AADEC /* CollectionViewTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTestUITests.swift; sourceTree = "<group>"; };
 		CE45D54A25C9094E005AADEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE95738525F986A800FFE6A5 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		CE95738A25F986C200FFE6A5 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		CE95738F25F98A3200FFE6A5 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		CE95739425F99F1E00FFE6A5 /* CollectionViewCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCodeVC.swift; sourceTree = "<group>"; };
+		CE95739925F99F2B00FFE6A5 /* CollectionViewUIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewUIVC.swift; sourceTree = "<group>"; };
+		CE9573B525FA19FA00FFE6A5 /* CollectionViewDynamicCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDynamicCellVC.swift; sourceTree = "<group>"; };
+		CE9573BA25FA1A4D00FFE6A5 /* CollectionViewDynamicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDynamicCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +118,14 @@
 				CE45D52325C90949005AADEC /* AppDelegate.swift */,
 				CE45D52525C90949005AADEC /* SceneDelegate.swift */,
 				CE45D52725C90949005AADEC /* ViewController.swift */,
+				CE95739425F99F1E00FFE6A5 /* CollectionViewCodeVC.swift */,
+				CE95739925F99F2B00FFE6A5 /* CollectionViewUIVC.swift */,
+				CE95738525F986A800FFE6A5 /* Cell.xib */,
+				CE95738A25F986C200FFE6A5 /* Cell.swift */,
 				CE45D52925C90949005AADEC /* Main.storyboard */,
+				CE9573B525FA19FA00FFE6A5 /* CollectionViewDynamicCellVC.swift */,
+				CE9573BA25FA1A4D00FFE6A5 /* CollectionViewDynamicCell.swift */,
+				CE95738F25F98A3200FFE6A5 /* MainVC.swift */,
 				CE45D52F25C9094D005AADEC /* Assets.xcassets */,
 				CE45D53125C9094E005AADEC /* LaunchScreen.storyboard */,
 				CE45D53425C9094E005AADEC /* Info.plist */,
@@ -235,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE45D53325C9094E005AADEC /* LaunchScreen.storyboard in Resources */,
+				CE95738625F986A800FFE6A5 /* Cell.xib in Resources */,
 				CE45D53025C9094D005AADEC /* Assets.xcassets in Resources */,
 				CE45D52B25C90949005AADEC /* Main.storyboard in Resources */,
 			);
@@ -261,8 +283,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE95739525F99F1E00FFE6A5 /* CollectionViewCodeVC.swift in Sources */,
+				CE9573B625FA19FA00FFE6A5 /* CollectionViewDynamicCellVC.swift in Sources */,
+				CE95739A25F99F2B00FFE6A5 /* CollectionViewUIVC.swift in Sources */,
 				CE45D52825C90949005AADEC /* ViewController.swift in Sources */,
+				CE9573BB25FA1A4D00FFE6A5 /* CollectionViewDynamicCell.swift in Sources */,
+				CE95739025F98A3200FFE6A5 /* MainVC.swift in Sources */,
 				CE45D52425C90949005AADEC /* AppDelegate.swift in Sources */,
+				CE95738B25F986C200FFE6A5 /* Cell.swift in Sources */,
 				CE45D52E25C90949005AADEC /* CollectionViewTest.xcdatamodeld in Sources */,
 				CE45D52625C90949005AADEC /* SceneDelegate.swift in Sources */,
 			);

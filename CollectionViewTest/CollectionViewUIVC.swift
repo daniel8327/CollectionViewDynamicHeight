@@ -1,55 +1,44 @@
 //
-//  ViewController.swift
+//  CollectionViewUIVC.swift
 //  CollectionViewTest
 //
-//  Created by moonkyoochoi on 2021/02/02.
+//  Created by moonkyoochoi on 2021/03/11.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class CollectionViewUIVC: UIViewController {
+
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var listItems: [Int] = [1]
     let margin: CGFloat = 20
     var cellItemCount: CGFloat = 3
     
-    var collectionView: UICollectionView!
-    let flowLayout = UICollectionViewFlowLayout()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.navigationItem.title = "Code"
-        
-//        self.view.tintColor = .white
-//        self.view.backgroundColor = .yellow
+        self.navigationItem.title = "UI"
         
         let bt = UIBarButtonItem(title: "Change", style: .done, target: self, action: #selector(self.change))
         self.navigationItem.rightBarButtonItems = [bt]
         
         addData2()
         
-        flowLayout.scrollDirection = .vertical
-        
-        flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin) // CollectionView 의 전체 마진
-        flowLayout.minimumLineSpacing = 10 // 셀 아이템간의 라인 마진
-        flowLayout.minimumInteritemSpacing = 4 // 셀 아이템간의 측면 마진
-        
         setType(.collectionView)
         
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
+        setupFlowLayout()
         
         // 셀 등록
         //collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "stCell")
         
         collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionView.delegate   = self
         collectionView.register(UINib(nibName: "Cell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         
         view.addSubview(collectionView)
     }
-    
     
     @objc func change() {
         
@@ -58,6 +47,8 @@ class ViewController: UIViewController {
         } else {
             setType(.collectionView)
         }
+        
+        setupFlowLayout()
     }
     
     func addData2() {
@@ -81,11 +72,19 @@ class ViewController: UIViewController {
         default:
             cellItemCount = 1
         }
-        
-        
+    }
+    
+    private func setupFlowLayout() {
+        let flowLayout = UICollectionViewFlowLayout()
+        //flowLayout.sectionInset = UIEdgeInsets.zero
+        flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin) // CollectionView 의 전체 마진
+        flowLayout.minimumLineSpacing = 10 // 셀 아이템간의 라인 마진
+        flowLayout.minimumInteritemSpacing = 4 // 셀 아이템간의 측면 마진
+
         flowLayout.itemSize.width = floor((UIScreen.main.bounds.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right - ((cellItemCount - 1) * flowLayout.minimumInteritemSpacing)) / cellItemCount)
         flowLayout.itemSize.height = flowLayout.itemSize.width
         
+        self.collectionView.collectionViewLayout = flowLayout
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -113,7 +112,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CollectionViewUIVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listItems.count
     }
@@ -127,6 +126,4 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.label.text = "row \(listItems[(indexPath as NSIndexPath).row])"
         return cell
     }
-    
-    
 }
