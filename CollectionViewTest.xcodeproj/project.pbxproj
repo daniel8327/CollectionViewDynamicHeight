@@ -16,6 +16,9 @@
 		CE45D53325C9094E005AADEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE45D53125C9094E005AADEC /* LaunchScreen.storyboard */; };
 		CE45D53E25C9094E005AADEC /* CollectionViewTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45D53D25C9094E005AADEC /* CollectionViewTestTests.swift */; };
 		CE45D54925C9094E005AADEC /* CollectionViewTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45D54825C9094E005AADEC /* CollectionViewTestUITests.swift */; };
+		CE50D6A525FADC820039E90C /* CollectionViewDynamicCell2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50D6A425FADC820039E90C /* CollectionViewDynamicCell2VC.swift */; };
+		CE50D6B525FADD570039E90C /* CollectionViewDynamicCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE50D6B425FADD570039E90C /* CollectionViewDynamicCell2.xib */; };
+		CE50D6BE25FB26880039E90C /* CollectionViewDynamicCell3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50D6BD25FB26880039E90C /* CollectionViewDynamicCell3VC.swift */; };
 		CE95738625F986A800FFE6A5 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95738525F986A800FFE6A5 /* Cell.xib */; };
 		CE95738B25F986C200FFE6A5 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95738A25F986C200FFE6A5 /* Cell.swift */; };
 		CE95739025F98A3200FFE6A5 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95738F25F98A3200FFE6A5 /* MainVC.swift */; };
@@ -58,6 +61,9 @@
 		CE45D54425C9094E005AADEC /* CollectionViewTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionViewTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE45D54825C9094E005AADEC /* CollectionViewTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTestUITests.swift; sourceTree = "<group>"; };
 		CE45D54A25C9094E005AADEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE50D6A425FADC820039E90C /* CollectionViewDynamicCell2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDynamicCell2VC.swift; sourceTree = "<group>"; };
+		CE50D6B425FADD570039E90C /* CollectionViewDynamicCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewDynamicCell2.xib; sourceTree = "<group>"; };
+		CE50D6BD25FB26880039E90C /* CollectionViewDynamicCell3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDynamicCell3VC.swift; sourceTree = "<group>"; };
 		CE95738525F986A800FFE6A5 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		CE95738A25F986C200FFE6A5 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		CE95738F25F98A3200FFE6A5 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -125,6 +131,9 @@
 				CE45D52925C90949005AADEC /* Main.storyboard */,
 				CE9573B525FA19FA00FFE6A5 /* CollectionViewDynamicCellVC.swift */,
 				CE9573BA25FA1A4D00FFE6A5 /* CollectionViewDynamicCell.swift */,
+				CE50D6A425FADC820039E90C /* CollectionViewDynamicCell2VC.swift */,
+				CE50D6B425FADD570039E90C /* CollectionViewDynamicCell2.xib */,
+				CE50D6BD25FB26880039E90C /* CollectionViewDynamicCell3VC.swift */,
 				CE95738F25F98A3200FFE6A5 /* MainVC.swift */,
 				CE45D52F25C9094D005AADEC /* Assets.xcassets */,
 				CE45D53125C9094E005AADEC /* LaunchScreen.storyboard */,
@@ -256,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE45D53325C9094E005AADEC /* LaunchScreen.storyboard in Resources */,
+				CE50D6B525FADD570039E90C /* CollectionViewDynamicCell2.xib in Resources */,
 				CE95738625F986A800FFE6A5 /* Cell.xib in Resources */,
 				CE45D53025C9094D005AADEC /* Assets.xcassets in Resources */,
 				CE45D52B25C90949005AADEC /* Main.storyboard in Resources */,
@@ -284,9 +294,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE95739525F99F1E00FFE6A5 /* CollectionViewCodeVC.swift in Sources */,
+				CE50D6BE25FB26880039E90C /* CollectionViewDynamicCell3VC.swift in Sources */,
 				CE9573B625FA19FA00FFE6A5 /* CollectionViewDynamicCellVC.swift in Sources */,
 				CE95739A25F99F2B00FFE6A5 /* CollectionViewUIVC.swift in Sources */,
 				CE45D52825C90949005AADEC /* ViewController.swift in Sources */,
+				CE50D6A525FADC820039E90C /* CollectionViewDynamicCell2VC.swift in Sources */,
 				CE9573BB25FA1A4D00FFE6A5 /* CollectionViewDynamicCell.swift in Sources */,
 				CE95739025F98A3200FFE6A5 /* MainVC.swift in Sources */,
 				CE45D52425C90949005AADEC /* AppDelegate.swift in Sources */,

@@ -9,9 +9,11 @@ import UIKit
 
 class MainVC: UIViewController {
 
-    let part = [("Code로 CollectionView", "CollectionViewCodeVC"),
-                ("UI로 CollectionView", "CollectionViewUIVC"),
-                ("Dynamic Cell CollectionView", "CollectionViewDynamicCellVC")]
+    let part = [("Code로 CollectionView", "CollectionViewCodeVC", nil),
+                ("UI로 CollectionView", "CollectionViewUIVC", nil),
+                ("Dynamic Cell CollectionView", "CollectionViewDynamicCellVC", nil),
+                ("Dynamic Cell CollectionView2", "CollectionViewDynamicCell2VC", CollectionViewDynamicCell2VC()),
+                ("Dynamic Cell CollectionView3", "CollectionViewDynamicCell3VC", CollectionViewDynamicCell3VC())]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +47,23 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let targetVC = storyboard?.instantiateViewController(withIdentifier: part[indexPath.row].1)  else { return }
-        //targetVC.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-        //self.present(targetVC, animated: true)
         
-        //self.navigationController?.pushViewController(targetVC, animated: true)
-        navigationController?.pushViewController(targetVC, animated: true)
+        if let vc = part[indexPath.row].2 {
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            guard let targetVC = storyboard?.instantiateViewController(withIdentifier: part[indexPath.row].1)  else { return }
+            //targetVC.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            //self.present(targetVC, animated: true)
+            
+            //self.navigationController?.pushViewController(targetVC, animated: true)
+            navigationController?.pushViewController(targetVC, animated: true)
+        }
     }
     
+}
+
+extension NSObject {
+    static var reusableIdentifier: String {
+        return String(describing: self)
+    }
 }
