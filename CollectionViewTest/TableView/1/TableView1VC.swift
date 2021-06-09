@@ -9,14 +9,15 @@ import UIKit
 
 class TableView1VC: UIViewController {
     
-    lazy var tableView: UITableView = UITableView(frame: .zero) {
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.rowHeight = UITableView.automaticDimension // 유동적인 셀 높이 설정
             tableView.estimatedRowHeight = 300 // 최소 셀 높이 설정
         }
     }
     
-    lazy var input: UITextField = UITextField()
+    @IBOutlet weak var input: UITextField!
     
     var items: [TableView1Model?] = [TableView1Model]()
     
@@ -27,26 +28,26 @@ class TableView1VC: UIViewController {
         
         
         
-        view.addSubview(input)
-        input.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate(
-            [input.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-             input.heightAnchor.constraint(equalToConstant: 50),
-             input.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-             input.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)])
-        
-        input.backgroundColor = .yellow
-                
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate(
-            [tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-             tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-             tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-             tableView.bottomAnchor.constraint(equalTo: input.topAnchor)])
-        
+//        view.addSubview(input)
+//        input.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate(
+//            [input.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+//             input.heightAnchor.constraint(equalToConstant: 50),
+//             input.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+//             input.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)])
+//
+//        input.backgroundColor = .yellow
+//
+//        view.addSubview(tableView)
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate(
+//            [tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+//             tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+//             tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+//             tableView.bottomAnchor.constraint(equalTo: input.topAnchor)])
+//
         tableView.backgroundColor = .red
         
         tableView.dataSource = self
@@ -87,28 +88,14 @@ class TableView1VC: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    
     @objc func keyboardWillShow(_ sender: Notification) {
         
-//        guard let keyboardFrame = sender.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-//        tableView.contentInset.bottom = view.convert(keyboardFrame.cgRectValue, from: nil).size.height
-        
-        
-        print("keyboard was shown")
-        guard let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
-        //tableView.scrollIndicatorInsets = tableView.contentInset
-
+        guard let keyboardFrame = sender.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        scrollView.contentInset.bottom = view.convert(keyboardFrame.cgRectValue, from: nil).size.height
     }
     
     @objc func keyboardWillHide(_ sender: Notification) {
-        //tableView.contentInset.bottom = 0
-        
-        
-        print("keyboard will be hidden")
-        tableView.contentInset = UIEdgeInsets.zero
-        //tableView.scrollIndicatorInsets = UIEdgeInsets.zero
+        scrollView.contentInset.bottom = 0
     }
     
     @IBAction func didClick(_ sender: UIBarButtonItem) {

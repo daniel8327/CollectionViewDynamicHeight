@@ -9,14 +9,16 @@ import UIKit
 
 class MainVC: UIViewController {
 
-    let part = [("Code로 CollectionView", "CollectionViewCodeVC", nil),
+    lazy var tvc = UINib(nibName: TableView1VC.reusableIdentifier, bundle: nil).instantiate(withOwner: self, options: [:])[0] as! TableView1VC
+    
+    lazy var part = [("Code로 CollectionView", "CollectionViewCodeVC", nil),
                 ("UI로 CollectionView", "CollectionViewUIVC", nil),
                 ("Dynamic Cell CollectionView", "CollectionViewDynamicCellVC", nil),
                 ("Dynamic Cell CollectionView2", "CollectionViewDynamicCell2VC", CollectionViewDynamicCell2VC()),
                 ("Dynamic Cell CollectionView3", "CollectionViewDynamicCell3VC", CollectionViewDynamicCell3VC()),
                 ("TableView In CollectionView", "TableViewInCollectionViewVC", TableViewInCollectionViewVC()),
                 ("JustCollectionViewVC", "JustCollectionViewVC", JustCollectionViewVC()),
-                ("TableView1VC", "TableView1VC", TableView1VC())]
+                ("TableView1VC", "TableView1VC", tvc)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
