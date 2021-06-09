@@ -13,7 +13,10 @@ class MainVC: UIViewController {
                 ("UI로 CollectionView", "CollectionViewUIVC", nil),
                 ("Dynamic Cell CollectionView", "CollectionViewDynamicCellVC", nil),
                 ("Dynamic Cell CollectionView2", "CollectionViewDynamicCell2VC", CollectionViewDynamicCell2VC()),
-                ("Dynamic Cell CollectionView3", "CollectionViewDynamicCell3VC", CollectionViewDynamicCell3VC())]
+                ("Dynamic Cell CollectionView3", "CollectionViewDynamicCell3VC", CollectionViewDynamicCell3VC()),
+                ("TableView In CollectionView", "TableViewInCollectionViewVC", TableViewInCollectionViewVC()),
+                ("JustCollectionViewVC", "JustCollectionViewVC", JustCollectionViewVC()),
+                ("TableView1VC", "TableView1VC", TableView1VC())]
     
     override func viewDidLoad() {
         super.viewDidLoad()

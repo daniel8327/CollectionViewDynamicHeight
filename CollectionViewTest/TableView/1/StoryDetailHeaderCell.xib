@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Aue-aQ-Pjl" customClass="StoryDetailHeaderCell" customModule="CollectionViewTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="422" height="122"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aue-aQ-Pjl" id="EqN-vS-PrX">
+                <rect key="frame" x="0.0" y="0.0" width="422" height="122"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lm-mo-cQh">
+                        <rect key="frame" x="8" y="8" width="406" height="106"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="2Lm-mo-cQh" secondAttribute="trailing" constant="8" id="BaF-P2-XLR"/>
+                    <constraint firstItem="2Lm-mo-cQh" firstAttribute="top" secondItem="EqN-vS-PrX" secondAttribute="top" constant="8" id="E2u-DK-qpR"/>
+                    <constraint firstItem="2Lm-mo-cQh" firstAttribute="leading" secondItem="EqN-vS-PrX" secondAttribute="leading" constant="8" id="OpJ-Ft-6Io"/>
+                    <constraint firstAttribute="bottom" secondItem="2Lm-mo-cQh" secondAttribute="bottom" constant="8" id="sM7-Nj-c8y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="name" destination="2Lm-mo-cQh" id="5DM-Tj-ccY"/>
+            </connections>
+            <point key="canvasLocation" x="85.507246376811594" y="109.82142857142857"/>
+        </tableViewCell>
+    </objects>
+</document>
